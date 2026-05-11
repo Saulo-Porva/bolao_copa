@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.env
+*.egg-info/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Claude Code local files — do NOT commit
+.claude/local_settings.json
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.claude/telemetry/sessions/
+.claude/memory/
+.claude/dev/logs/
+.claude/dev/progress/
+.claude/dev/tasks/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.pem
+*.key
+*.p12
+.env.*
+secrets/
+credentials.json
+service-account.json

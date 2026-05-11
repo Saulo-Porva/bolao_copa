@@ -1,0 +1,95 @@
+schema_version: "1.0"
+domain: medallion
+file_type: standards
+last_validated: "2026-02-10"
+source: "Databricks Medallion Architecture Best Practices"
+
+records:
+  naming_conventions:
+    description: "Table and column naming standards per layer"
+    fields:
+      bronze_table_pattern:
+        type: string
+        default: "bronze_{source_system}_{entity}"
+        validation:
+          - "Must start with 'bronze_'"
+          - "Must include source system identifier"
+        notes: "e.g., bronze_ubereats_invoices"
+
+      silver_table_pattern:
+        type: string
+        default: "silver_{domain}_{entity}"
+        validation:
+          - "Must start with 'silver_'"
+          - "Must include business domain"
+        notes: "e.g., silver_finance_invoices"
+
+      gold_table_pattern:
+        type: string
+        default: "gold_{domain}_{metric_or_entity}"
+        validation:
+          - "Must start with 'gold_'"
+          - "Must describe business purpose"
+        notes: "e.g., gold_finance_daily_revenue"
+
+      quarantine_table_pattern:
+        type: string
+        default: "quarantine_{source_layer}_{entity}"
+        notes: "e.g., quarantine_silver_invoices"
+
+  metadata_columns:
+    description: "Required metadata columns per layer"
+    fields:
+      bronze_required:
+        type: list
+        default:
+          - "_ingested_at: TIMESTAMP"
+          - "_source_file: STRING"
+          - "_source_system: STRING"
+        notes: "Traceability metadata"
+
+      silver_required:
+        type: list
+        default:
+          - "_validated_at: TIMESTAMP"
+        notes: "Validation timestamp"
+
+      quarantine_required:
+        type: list
+        default:
+          - "_quarantined_at: TIMESTAMP"
+          - "_quarantine_reason: STRING"
+        notes: "Rejection tracking"
+
+  quality_rules:
+    description: "Quality enforcement strategy per layer"
+    fields:
+      bronze_enforcement:
+        type: string
+        default: "expect (allow all, log violations)"
+        notes: "Never drop or fail in Bronze"
+
+      silver_enforcement:
+        type: string
+        default: "expect_or_drop (drop invalid records)"
+        notes: "Quality gate for promotion"
+
+      gold_enforcement:
+        type: string
+        default: "expect_or_fail (fail on business rule violations)"
+        notes: "Critical business rules"
+
+  table_properties:
+    description: "Required table properties per layer"
+    fields:
+      quality_tag:
+        type: string
+        required: true
+        validation:
+          - "bronze|silver|gold"
+        notes: "table_properties={'quality': 'bronze'}"
+
+      delta_optimization:
+        type: string
+        default: "OPTIMIZE + ZORDER on query columns"
+        notes: "Applied to Silver and Gold tables"

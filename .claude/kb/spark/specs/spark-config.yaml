@@ -1,0 +1,105 @@
+schema_version: "1.0"
+domain: spark
+file_type: configuration
+last_validated: "2026-02-10"
+source: "Apache Spark 4.x Official Documentation"
+
+records:
+  core_settings:
+    description: "Essential Spark configuration for production pipelines"
+    fields:
+      spark.app.name:
+        type: string
+        required: true
+        default: ""
+        notes: "Application name visible in Spark UI"
+
+      spark.master:
+        type: string
+        required: true
+        default: "local[*]"
+        validation:
+          - "local[N] for local, yarn, k8s://, spark:// for cluster"
+        notes: "Cluster manager URL"
+
+      spark.sql.shuffle.partitions:
+        type: integer
+        required: false
+        default: "200"
+        validation:
+          - "Must be > 0"
+          - "With AQE enabled, auto-coalesced at runtime"
+        notes: "Number of partitions for shuffle operations"
+
+      spark.sql.adaptive.enabled:
+        type: boolean
+        required: false
+        default: "true"
+        notes: "Enable Adaptive Query Execution (AQE)"
+
+      spark.sql.adaptive.coalescePartitions.enabled:
+        type: boolean
+        required: false
+        default: "true"
+        notes: "Auto-merge small shuffle partitions"
+
+      spark.sql.adaptive.skewJoin.enabled:
+        type: boolean
+        required: false
+        default: "true"
+        notes: "Auto-handle skewed join partitions"
+
+      spark.sql.autoBroadcastJoinThreshold:
+        type: integer
+        required: false
+        default: "10485760"
+        validation:
+          - "Bytes. Set to -1 to disable"
+        notes: "Max size for broadcast join (10MB default)"
+
+      spark.serializer:
+        type: string
+        required: false
+        default: "org.apache.spark.serializer.JavaSerializer"
+        validation:
+          - "Use KryoSerializer for better performance"
+        notes: "Serialization library"
+
+      spark.sql.parquet.compression.codec:
+        type: string
+        required: false
+        default: "snappy"
+        validation:
+          - "snappy|gzip|lzo|zstd|none"
+        notes: "Parquet compression codec"
+
+  memory_settings:
+    description: "Memory configuration for executors"
+    fields:
+      spark.executor.memory:
+        type: string
+        required: false
+        default: "1g"
+        notes: "Executor heap memory"
+
+      spark.executor.memoryOverhead:
+        type: string
+        required: false
+        default: "10% of executor.memory"
+        notes: "Off-heap memory for containers"
+
+      spark.memory.fraction:
+        type: decimal
+        required: false
+        default: "0.6"
+        validation:
+          - "0.0 to 1.0"
+        notes: "Fraction of heap for execution and storage"
+
+      spark.memory.storageFraction:
+        type: decimal
+        required: false
+        default: "0.5"
+        validation:
+          - "0.0 to 1.0"
+        notes: "Fraction of memory.fraction for storage"

@@ -1,0 +1,99 @@
+schema_version: "1.0"
+domain: bigquery
+file_type: configuration
+last_validated: "2026-02-10"
+source: "Google BigQuery Documentation"
+
+records:
+  table_settings:
+    description: "Table configuration for invoice pipeline"
+    fields:
+      partitioning:
+        type: string
+        default: "DAY on invoice_date"
+        validation:
+          - "DAY|MONTH|YEAR|HOUR"
+        notes: "Time-based partitioning on date column"
+
+      clustering:
+        type: list
+        default:
+          - "vendor_name"
+        validation:
+          - "Max 4 clustering columns"
+        notes: "Most frequently filtered columns first"
+
+      require_partition_filter:
+        type: boolean
+        default: "true"
+        notes: "Force queries to filter on partition column"
+
+      expiration_days:
+        type: integer
+        required: false
+        default: "null"
+        notes: "Auto-delete after N days. null = no expiration"
+
+  streaming_settings:
+    description: "Streaming insert configuration"
+    fields:
+      batch_size:
+        type: integer
+        default: "100"
+        validation:
+          - "1 to 10000 rows per request"
+        notes: "Rows per insert_rows_json call"
+
+      max_retries:
+        type: integer
+        default: "3"
+        notes: "Retry attempts for transient errors"
+
+      retry_backoff:
+        type: string
+        default: "exponential"
+        validation:
+          - "2^attempt seconds"
+        notes: "Exponential backoff between retries"
+
+      numeric_format:
+        type: string
+        default: "string"
+        notes: "Pass NUMERIC values as strings for precision"
+
+  cost_settings:
+    description: "Cost control configuration"
+    fields:
+      maximum_bytes_billed:
+        type: integer
+        default: "10737418240"
+        notes: "10 GB query cost guard"
+
+      use_query_cache:
+        type: boolean
+        default: "true"
+        notes: "Reuse cached results for identical queries"
+
+      pricing_model:
+        type: string
+        default: "on-demand"
+        validation:
+          - "on-demand|capacity (slots)"
+        notes: "On-demand: $6.25/TB scanned"
+
+  iam_roles:
+    description: "Required IAM roles for pipeline"
+    fields:
+      pipeline_service_account:
+        type: list
+        default:
+          - "roles/bigquery.dataEditor (on dataset)"
+          - "roles/bigquery.jobUser (on project)"
+        notes: "Minimum roles for streaming inserts and load jobs"
+
+      analytics_users:
+        type: list
+        default:
+          - "roles/bigquery.dataViewer (on dataset)"
+          - "roles/bigquery.jobUser (on project)"
+        notes: "Read-only access for analysts"

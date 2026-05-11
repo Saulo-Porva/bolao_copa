@@ -1,0 +1,106 @@
+schema_version: "1.0"
+domain: lakeflow
+file_type: configuration
+last_validated: "2026-02-10"
+source: "Databricks Lakeflow / DLT Documentation"
+
+records:
+  pipeline_settings:
+    description: "DLT pipeline configuration parameters"
+    fields:
+      name:
+        type: string
+        required: true
+        notes: "Unique pipeline name"
+
+      catalog:
+        type: string
+        required: true
+        notes: "Unity Catalog target catalog"
+
+      target:
+        type: string
+        required: true
+        notes: "Target schema within catalog"
+
+      continuous:
+        type: boolean
+        required: false
+        default: "false"
+        notes: "true for real-time, false for triggered"
+
+      photon:
+        type: boolean
+        required: false
+        default: "true"
+        notes: "Enable Photon vectorized engine"
+
+      serverless:
+        type: boolean
+        required: false
+        default: "false"
+        notes: "Use serverless compute"
+
+      channel:
+        type: string
+        required: false
+        default: "CURRENT"
+        validation:
+          - "CURRENT or PREVIEW"
+        notes: "DLT runtime channel"
+
+  auto_loader_options:
+    description: "Auto Loader (cloudFiles) configuration"
+    fields:
+      cloudFiles.format:
+        type: string
+        required: true
+        validation:
+          - "json|csv|parquet|avro|text|binaryFile"
+        notes: "Source file format"
+
+      cloudFiles.schemaLocation:
+        type: string
+        required: false
+        notes: "Path to store inferred schema"
+
+      cloudFiles.inferColumnTypes:
+        type: boolean
+        required: false
+        default: "false"
+        notes: "Auto-detect column types"
+
+      cloudFiles.schemaEvolutionMode:
+        type: string
+        required: false
+        default: "none"
+        validation:
+          - "addNewColumns|rescue|none|failOnNewColumns"
+        notes: "How to handle schema changes"
+
+      cloudFiles.maxFilesPerTrigger:
+        type: integer
+        required: false
+        default: "1000"
+        notes: "Max files per micro-batch"
+
+      cloudFiles.useNotifications:
+        type: boolean
+        required: false
+        default: "false"
+        notes: "Event-based vs directory listing"
+
+  expectation_actions:
+    description: "Data quality enforcement levels"
+    fields:
+      expect:
+        type: string
+        notes: "Log violation, keep record"
+
+      expect_or_drop:
+        type: string
+        notes: "Log violation, drop record"
+
+      expect_or_fail:
+        type: string
+        notes: "Log violation, fail pipeline"
