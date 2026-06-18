@@ -579,6 +579,74 @@ domains:
       - name: azure-least-privilege
         path: patterns/azure-least-privilege.md
 
+  ui-design:
+    name: UI Design — Tailwind & Web
+    description: Design visual de interfaces web — cor, tipografia, espaçamento, hierarquia visual e design system com Tailwind CSS
+    path: ui-design/
+    mcp_validated: "2026-06-10"
+    entry_points:
+      index: index.md
+      quick_reference: quick-reference.md
+    concepts:
+      - name: color-theory
+        path: concepts/color-theory.md
+        confidence: 0.95
+      - name: typography
+        path: concepts/typography.md
+        confidence: 0.95
+      - name: spacing-layout
+        path: concepts/spacing-layout.md
+        confidence: 0.95
+      - name: visual-hierarchy
+        path: concepts/visual-hierarchy.md
+        confidence: 0.95
+      - name: component-design
+        path: concepts/component-design.md
+        confidence: 0.95
+    patterns:
+      - name: tailwind-design-system
+        path: patterns/tailwind-design-system.md
+      - name: mobile-first-ui
+        path: patterns/mobile-first-ui.md
+      - name: form-design
+        path: patterns/form-design.md
+      - name: dashboard-design
+        path: patterns/dashboard-design.md
+
+  ux:
+    name: UX — Field Workers & PWA
+    description: Experiência do usuário para PWAs móveis e trabalhadores de campo — heurísticas de Nielsen, acessibilidade e padrões de feedback
+    path: ux/
+    mcp_validated: "2026-06-10"
+    entry_points:
+      index: index.md
+      quick_reference: quick-reference.md
+    concepts:
+      - name: usability-principles
+        path: concepts/usability-principles.md
+        confidence: 0.95
+      - name: mobile-ux
+        path: concepts/mobile-ux.md
+        confidence: 0.95
+      - name: user-flows
+        path: concepts/user-flows.md
+        confidence: 0.95
+      - name: information-architecture
+        path: concepts/information-architecture.md
+        confidence: 0.95
+      - name: accessibility
+        path: concepts/accessibility.md
+        confidence: 0.95
+    patterns:
+      - name: field-worker-ux
+        path: patterns/field-worker-ux.md
+      - name: feedback-patterns
+        path: patterns/feedback-patterns.md
+      - name: form-ux
+        path: patterns/form-ux.md
+      - name: admin-vs-field-ux
+        path: patterns/admin-vs-field-ux.md
+
   bigquery:
     name: Google BigQuery
     description: Google's serverless data warehouse — final destination in the invoice processing pipeline
