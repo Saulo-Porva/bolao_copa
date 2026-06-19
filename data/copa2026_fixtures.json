@@ -1,144 +1,494 @@
 [
   {
     "group": "A",
-    "teams": ["USA", "PAN", "BOL"],
+    "teams": [
+      "MEX",
+      "KOR",
+      "CZE",
+      "RSA"
+    ],
     "matches": [
-      {"home": "USA", "away": "PAN", "label": "Estados Unidos x Panamá"},
-      {"home": "USA", "away": "BOL", "label": "Estados Unidos x Bolívia"},
-      {"home": "PAN", "away": "BOL", "label": "Panamá x Bolívia"}
+      {
+        "home": "MEX",
+        "away": "KOR",
+        "label": "México x Coreia do Sul"
+      },
+      {
+        "home": "MEX",
+        "away": "CZE",
+        "label": "México x República Checa"
+      },
+      {
+        "home": "MEX",
+        "away": "RSA",
+        "label": "México x África do Sul"
+      },
+      {
+        "home": "KOR",
+        "away": "CZE",
+        "label": "Coreia do Sul x República Checa"
+      },
+      {
+        "home": "KOR",
+        "away": "RSA",
+        "label": "Coreia do Sul x África do Sul"
+      },
+      {
+        "home": "CZE",
+        "away": "RSA",
+        "label": "República Checa x África do Sul"
+      }
     ]
   },
   {
     "group": "B",
-    "teams": ["MEX", "JAM", "HON"],
+    "teams": [
+      "CAN",
+      "SUI",
+      "BIH",
+      "QAT"
+    ],
     "matches": [
-      {"home": "MEX", "away": "JAM", "label": "México x Jamaica"},
-      {"home": "MEX", "away": "HON", "label": "México x Honduras"},
-      {"home": "JAM", "away": "HON", "label": "Jamaica x Honduras"}
+      {
+        "home": "CAN",
+        "away": "SUI",
+        "label": "Canadá x Suíça"
+      },
+      {
+        "home": "CAN",
+        "away": "BIH",
+        "label": "Canadá x Bósnia e Herzegovina"
+      },
+      {
+        "home": "CAN",
+        "away": "QAT",
+        "label": "Canadá x Catar"
+      },
+      {
+        "home": "SUI",
+        "away": "BIH",
+        "label": "Suíça x Bósnia e Herzegovina"
+      },
+      {
+        "home": "SUI",
+        "away": "QAT",
+        "label": "Suíça x Catar"
+      },
+      {
+        "home": "BIH",
+        "away": "QAT",
+        "label": "Bósnia e Herzegovina x Catar"
+      }
     ]
   },
   {
     "group": "C",
-    "teams": ["CAN", "MAR", "BEL"],
+    "teams": [
+      "MAR",
+      "SCO",
+      "BRA",
+      "HTI"
+    ],
     "matches": [
-      {"home": "CAN", "away": "MAR", "label": "Canadá x Marrocos"},
-      {"home": "CAN", "away": "BEL", "label": "Canadá x Bélgica"},
-      {"home": "MAR", "away": "BEL", "label": "Marrocos x Bélgica"}
+      {
+        "home": "MAR",
+        "away": "SCO",
+        "label": "Marrocos x Escócia"
+      },
+      {
+        "home": "MAR",
+        "away": "BRA",
+        "label": "Marrocos x Brasil"
+      },
+      {
+        "home": "MAR",
+        "away": "HTI",
+        "label": "Marrocos x Haiti"
+      },
+      {
+        "home": "SCO",
+        "away": "BRA",
+        "label": "Escócia x Brasil"
+      },
+      {
+        "home": "SCO",
+        "away": "HTI",
+        "label": "Escócia x Haiti"
+      },
+      {
+        "home": "BRA",
+        "away": "HTI",
+        "label": "Brasil x Haiti"
+      }
     ]
   },
   {
     "group": "D",
-    "teams": ["COL", "CRC", "ECU"],
+    "teams": [
+      "USA",
+      "AUS",
+      "TUR",
+      "PAR"
+    ],
     "matches": [
-      {"home": "COL", "away": "CRC", "label": "Colômbia x Costa Rica"},
-      {"home": "COL", "away": "ECU", "label": "Colômbia x Equador"},
-      {"home": "CRC", "away": "ECU", "label": "Costa Rica x Equador"}
+      {
+        "home": "USA",
+        "away": "AUS",
+        "label": "Estados Unidos x Austrália"
+      },
+      {
+        "home": "USA",
+        "away": "TUR",
+        "label": "Estados Unidos x Turquia"
+      },
+      {
+        "home": "USA",
+        "away": "PAR",
+        "label": "Estados Unidos x Paraguai"
+      },
+      {
+        "home": "AUS",
+        "away": "TUR",
+        "label": "Austrália x Turquia"
+      },
+      {
+        "home": "AUS",
+        "away": "PAR",
+        "label": "Austrália x Paraguai"
+      },
+      {
+        "home": "TUR",
+        "away": "PAR",
+        "label": "Turquia x Paraguai"
+      }
     ]
   },
   {
     "group": "E",
-    "teams": ["ARG", "URU", "CHI"],
+    "teams": [
+      "GER",
+      "CIV",
+      "ECU",
+      "CUR"
+    ],
     "matches": [
-      {"home": "ARG", "away": "URU", "label": "Argentina x Uruguai"},
-      {"home": "ARG", "away": "CHI", "label": "Argentina x Chile"},
-      {"home": "URU", "away": "CHI", "label": "Uruguai x Chile"}
+      {
+        "home": "GER",
+        "away": "CIV",
+        "label": "Alemanha x Costa do Marfim"
+      },
+      {
+        "home": "GER",
+        "away": "ECU",
+        "label": "Alemanha x Equador"
+      },
+      {
+        "home": "GER",
+        "away": "CUR",
+        "label": "Alemanha x Curaçao"
+      },
+      {
+        "home": "CIV",
+        "away": "ECU",
+        "label": "Costa do Marfim x Equador"
+      },
+      {
+        "home": "CIV",
+        "away": "CUR",
+        "label": "Costa do Marfim x Curaçao"
+      },
+      {
+        "home": "ECU",
+        "away": "CUR",
+        "label": "Equador x Curaçao"
+      }
     ]
   },
   {
     "group": "F",
-    "teams": ["BRA", "JPN", "NGA"],
+    "teams": [
+      "SWE",
+      "JPN",
+      "NED",
+      "TUN"
+    ],
     "matches": [
-      {"home": "BRA", "away": "JPN", "label": "Brasil x Japão"},
-      {"home": "BRA", "away": "NGA", "label": "Brasil x Nigéria"},
-      {"home": "JPN", "away": "NGA", "label": "Japão x Nigéria"}
+      {
+        "home": "SWE",
+        "away": "JPN",
+        "label": "Suécia x Japão"
+      },
+      {
+        "home": "SWE",
+        "away": "NED",
+        "label": "Suécia x Holanda"
+      },
+      {
+        "home": "SWE",
+        "away": "TUN",
+        "label": "Suécia x Tunísia"
+      },
+      {
+        "home": "JPN",
+        "away": "NED",
+        "label": "Japão x Holanda"
+      },
+      {
+        "home": "JPN",
+        "away": "TUN",
+        "label": "Japão x Tunísia"
+      },
+      {
+        "home": "NED",
+        "away": "TUN",
+        "label": "Holanda x Tunísia"
+      }
     ]
   },
   {
     "group": "G",
-    "teams": ["FRA", "SEN", "VEN"],
+    "teams": [
+      "NZL",
+      "IRN",
+      "BEL",
+      "EGY"
+    ],
     "matches": [
-      {"home": "FRA", "away": "SEN", "label": "França x Senegal"},
-      {"home": "FRA", "away": "VEN", "label": "França x Venezuela"},
-      {"home": "SEN", "away": "VEN", "label": "Senegal x Venezuela"}
+      {
+        "home": "NZL",
+        "away": "IRN",
+        "label": "Nova Zelândia x Irã"
+      },
+      {
+        "home": "NZL",
+        "away": "BEL",
+        "label": "Nova Zelândia x Bélgica"
+      },
+      {
+        "home": "NZL",
+        "away": "EGY",
+        "label": "Nova Zelândia x Egito"
+      },
+      {
+        "home": "IRN",
+        "away": "BEL",
+        "label": "Irã x Bélgica"
+      },
+      {
+        "home": "IRN",
+        "away": "EGY",
+        "label": "Irã x Egito"
+      },
+      {
+        "home": "BEL",
+        "away": "EGY",
+        "label": "Bélgica x Egito"
+      }
     ]
   },
   {
     "group": "H",
-    "teams": ["ESP", "POL", "SRB"],
+    "teams": [
+      "URU",
+      "SAU",
+      "ESP",
+      "CPV"
+    ],
     "matches": [
-      {"home": "ESP", "away": "POL", "label": "Espanha x Polônia"},
-      {"home": "ESP", "away": "SRB", "label": "Espanha x Sérvia"},
-      {"home": "POL", "away": "SRB", "label": "Polônia x Sérvia"}
+      {
+        "home": "URU",
+        "away": "SAU",
+        "label": "Uruguai x Arábia Saudita"
+      },
+      {
+        "home": "URU",
+        "away": "ESP",
+        "label": "Uruguai x Espanha"
+      },
+      {
+        "home": "URU",
+        "away": "CPV",
+        "label": "Uruguai x Cabo Verde"
+      },
+      {
+        "home": "SAU",
+        "away": "ESP",
+        "label": "Arábia Saudita x Espanha"
+      },
+      {
+        "home": "SAU",
+        "away": "CPV",
+        "label": "Arábia Saudita x Cabo Verde"
+      },
+      {
+        "home": "ESP",
+        "away": "CPV",
+        "label": "Espanha x Cabo Verde"
+      }
     ]
   },
   {
     "group": "I",
-    "teams": ["ENG", "NED", "TUN"],
+    "teams": [
+      "NOR",
+      "FRA",
+      "SEN",
+      "IRQ"
+    ],
     "matches": [
-      {"home": "ENG", "away": "NED", "label": "Inglaterra x Holanda"},
-      {"home": "ENG", "away": "TUN", "label": "Inglaterra x Tunísia"},
-      {"home": "NED", "away": "TUN", "label": "Holanda x Tunísia"}
+      {
+        "home": "NOR",
+        "away": "FRA",
+        "label": "Noruega x França"
+      },
+      {
+        "home": "NOR",
+        "away": "SEN",
+        "label": "Noruega x Senegal"
+      },
+      {
+        "home": "NOR",
+        "away": "IRQ",
+        "label": "Noruega x Iraque"
+      },
+      {
+        "home": "FRA",
+        "away": "SEN",
+        "label": "França x Senegal"
+      },
+      {
+        "home": "FRA",
+        "away": "IRQ",
+        "label": "França x Iraque"
+      },
+      {
+        "home": "SEN",
+        "away": "IRQ",
+        "label": "Senegal x Iraque"
+      }
     ]
   },
   {
     "group": "J",
-    "teams": ["GER", "CRO", "SAU"],
+    "teams": [
+      "ARG",
+      "AUT",
+      "JOR",
+      "ALG"
+    ],
     "matches": [
-      {"home": "GER", "away": "CRO", "label": "Alemanha x Croácia"},
-      {"home": "GER", "away": "SAU", "label": "Alemanha x Arábia Saudita"},
-      {"home": "CRO", "away": "SAU", "label": "Croácia x Arábia Saudita"}
+      {
+        "home": "ARG",
+        "away": "AUT",
+        "label": "Argentina x Áustria"
+      },
+      {
+        "home": "ARG",
+        "away": "JOR",
+        "label": "Argentina x Jordânia"
+      },
+      {
+        "home": "ARG",
+        "away": "ALG",
+        "label": "Argentina x Argélia"
+      },
+      {
+        "home": "AUT",
+        "away": "JOR",
+        "label": "Áustria x Jordânia"
+      },
+      {
+        "home": "AUT",
+        "away": "ALG",
+        "label": "Áustria x Argélia"
+      },
+      {
+        "home": "JOR",
+        "away": "ALG",
+        "label": "Jordânia x Argélia"
+      }
     ]
   },
   {
     "group": "K",
-    "teams": ["POR", "ITA", "KOR"],
+    "teams": [
+      "COL",
+      "COD",
+      "POR",
+      "UZB"
+    ],
     "matches": [
-      {"home": "POR", "away": "ITA", "label": "Portugal x Itália"},
-      {"home": "POR", "away": "KOR", "label": "Portugal x Coreia do Sul"},
-      {"home": "ITA", "away": "KOR", "label": "Itália x Coreia do Sul"}
+      {
+        "home": "COL",
+        "away": "COD",
+        "label": "Colômbia x Congo (RD)"
+      },
+      {
+        "home": "COL",
+        "away": "POR",
+        "label": "Colômbia x Portugal"
+      },
+      {
+        "home": "COL",
+        "away": "UZB",
+        "label": "Colômbia x Uzbequistão"
+      },
+      {
+        "home": "COD",
+        "away": "POR",
+        "label": "Congo (RD) x Portugal"
+      },
+      {
+        "home": "COD",
+        "away": "UZB",
+        "label": "Congo (RD) x Uzbequistão"
+      },
+      {
+        "home": "POR",
+        "away": "UZB",
+        "label": "Portugal x Uzbequistão"
+      }
     ]
   },
   {
     "group": "L",
-    "teams": ["SUI", "DEN", "AUS"],
+    "teams": [
+      "ENG",
+      "GHA",
+      "PAN",
+      "CRO"
+    ],
     "matches": [
-      {"home": "SUI", "away": "DEN", "label": "Suíça x Dinamarca"},
-      {"home": "SUI", "away": "AUS", "label": "Suíça x Austrália"},
-      {"home": "DEN", "away": "AUS", "label": "Dinamarca x Austrália"}
-    ]
-  },
-  {
-    "group": "M",
-    "teams": ["IRN", "QAT", "NZL"],
-    "matches": [
-      {"home": "IRN", "away": "QAT", "label": "Irã x Catar"},
-      {"home": "IRN", "away": "NZL", "label": "Irã x Nova Zelândia"},
-      {"home": "QAT", "away": "NZL", "label": "Catar x Nova Zelândia"}
-    ]
-  },
-  {
-    "group": "N",
-    "teams": ["AUT", "UKR", "GHA"],
-    "matches": [
-      {"home": "AUT", "away": "UKR", "label": "Áustria x Ucrânia"},
-      {"home": "AUT", "away": "GHA", "label": "Áustria x Gana"},
-      {"home": "UKR", "away": "GHA", "label": "Ucrânia x Gana"}
-    ]
-  },
-  {
-    "group": "O",
-    "teams": ["TUR", "CMR", "EGY"],
-    "matches": [
-      {"home": "TUR", "away": "CMR", "label": "Turquia x Camarões"},
-      {"home": "TUR", "away": "EGY", "label": "Turquia x Egito"},
-      {"home": "CMR", "away": "EGY", "label": "Camarões x Egito"}
-    ]
-  },
-  {
-    "group": "P",
-    "teams": ["PER", "PAR"],
-    "matches": [
-      {"home": "PER", "away": "PAR", "label": "Peru x Paraguai"}
+      {
+        "home": "ENG",
+        "away": "GHA",
+        "label": "Inglaterra x Gana"
+      },
+      {
+        "home": "ENG",
+        "away": "PAN",
+        "label": "Inglaterra x Panamá"
+      },
+      {
+        "home": "ENG",
+        "away": "CRO",
+        "label": "Inglaterra x Croácia"
+      },
+      {
+        "home": "GHA",
+        "away": "PAN",
+        "label": "Gana x Panamá"
+      },
+      {
+        "home": "GHA",
+        "away": "CRO",
+        "label": "Gana x Croácia"
+      },
+      {
+        "home": "PAN",
+        "away": "CRO",
+        "label": "Panamá x Croácia"
+      }
     ]
   }
 ]

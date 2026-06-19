@@ -1,0 +1,554 @@
+{
+  "A": [
+    {
+      "Selecao": "México",
+      "J": 2,
+      "V": 2,
+      "E": 0,
+      "D": 0,
+      "GM": 3,
+      "GS": 0,
+      "Pts": 6,
+      "code": "MEX"
+    },
+    {
+      "Selecao": "Coreia do Sul",
+      "J": 2,
+      "V": 1,
+      "E": 0,
+      "D": 1,
+      "GM": 2,
+      "GS": 2,
+      "Pts": 3,
+      "code": "KOR"
+    },
+    {
+      "Selecao": "Rep. Checa",
+      "J": 2,
+      "V": 0,
+      "E": 1,
+      "D": 1,
+      "GM": 2,
+      "GS": 3,
+      "Pts": 1,
+      "code": "CZE"
+    },
+    {
+      "Selecao": "Africa do Sul",
+      "J": 2,
+      "V": 0,
+      "E": 1,
+      "D": 1,
+      "GM": 1,
+      "GS": 3,
+      "Pts": 1,
+      "code": "RSA"
+    }
+  ],
+  "B": [
+    {
+      "Selecao": "Canada",
+      "J": 2,
+      "V": 1,
+      "E": 1,
+      "D": 0,
+      "GM": 7,
+      "GS": 1,
+      "Pts": 4,
+      "code": "CAN"
+    },
+    {
+      "Selecao": "Suica",
+      "J": 2,
+      "V": 1,
+      "E": 1,
+      "D": 0,
+      "GM": 5,
+      "GS": 2,
+      "Pts": 4,
+      "code": "SUI"
+    },
+    {
+      "Selecao": "Bosnia e Herz.",
+      "J": 2,
+      "V": 0,
+      "E": 1,
+      "D": 1,
+      "GM": 2,
+      "GS": 5,
+      "Pts": 1,
+      "code": "BIH"
+    },
+    {
+      "Selecao": "Catar",
+      "J": 2,
+      "V": 0,
+      "E": 1,
+      "D": 1,
+      "GM": 1,
+      "GS": 7,
+      "Pts": 1,
+      "code": "QAT"
+    }
+  ],
+  "C": [
+    {
+      "Selecao": "Marrocos",
+      "J": 2,
+      "V": 1,
+      "E": 1,
+      "D": 0,
+      "GM": 2,
+      "GS": 1,
+      "Pts": 4,
+      "code": "MAR"
+    },
+    {
+      "Selecao": "Escocia",
+      "J": 2,
+      "V": 1,
+      "E": 0,
+      "D": 1,
+      "GM": 1,
+      "GS": 1,
+      "Pts": 3,
+      "code": "SCO"
+    },
+    {
+      "Selecao": "Brasil",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 1,
+      "GS": 1,
+      "Pts": 1,
+      "code": "BRA"
+    },
+    {
+      "Selecao": "Haiti",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 0,
+      "GS": 1,
+      "Pts": 0,
+      "code": "HTI"
+    }
+  ],
+  "D": [
+    {
+      "Selecao": "EUA",
+      "J": 2,
+      "V": 2,
+      "E": 0,
+      "D": 0,
+      "GM": 6,
+      "GS": 1,
+      "Pts": 6,
+      "code": "USA"
+    },
+    {
+      "Selecao": "Australia",
+      "J": 2,
+      "V": 1,
+      "E": 0,
+      "D": 1,
+      "GM": 2,
+      "GS": 2,
+      "Pts": 3,
+      "code": "AUS"
+    },
+    {
+      "Selecao": "Turquia",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 0,
+      "GS": 2,
+      "Pts": 0,
+      "code": "TUR"
+    },
+    {
+      "Selecao": "Paraguai",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 1,
+      "GS": 4,
+      "Pts": 0,
+      "code": "PAR"
+    }
+  ],
+  "E": [
+    {
+      "Selecao": "Alemanha",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 7,
+      "GS": 1,
+      "Pts": 3,
+      "code": "GER"
+    },
+    {
+      "Selecao": "Costa do Marfim",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 1,
+      "GS": 0,
+      "Pts": 3,
+      "code": "CIV"
+    },
+    {
+      "Selecao": "Equador",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 0,
+      "GS": 1,
+      "Pts": 0,
+      "code": "ECU"
+    },
+    {
+      "Selecao": "Curacao",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 1,
+      "GS": 7,
+      "Pts": 0,
+      "code": "CUR"
+    }
+  ],
+  "F": [
+    {
+      "Selecao": "Suecia",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 5,
+      "GS": 1,
+      "Pts": 3,
+      "code": "SWE"
+    },
+    {
+      "Selecao": "Japao",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 2,
+      "GS": 2,
+      "Pts": 1,
+      "code": "JPN"
+    },
+    {
+      "Selecao": "Holanda",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 2,
+      "GS": 2,
+      "Pts": 1,
+      "code": "NED"
+    },
+    {
+      "Selecao": "Tunisia",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 1,
+      "GS": 5,
+      "Pts": 0,
+      "code": "TUN"
+    }
+  ],
+  "G": [
+    {
+      "Selecao": "Nova Zelandia",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 2,
+      "GS": 2,
+      "Pts": 1,
+      "code": "NZL"
+    },
+    {
+      "Selecao": "Ira",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 2,
+      "GS": 2,
+      "Pts": 1,
+      "code": "IRN"
+    },
+    {
+      "Selecao": "Belgica",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 1,
+      "GS": 1,
+      "Pts": 1,
+      "code": "BEL"
+    },
+    {
+      "Selecao": "Egito",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 1,
+      "GS": 1,
+      "Pts": 1,
+      "code": "EGY"
+    }
+  ],
+  "H": [
+    {
+      "Selecao": "Uruguai",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 1,
+      "GS": 1,
+      "Pts": 1,
+      "code": "URU"
+    },
+    {
+      "Selecao": "Arabia Saudita",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 1,
+      "GS": 1,
+      "Pts": 1,
+      "code": "SAU"
+    },
+    {
+      "Selecao": "Espanha",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 0,
+      "GS": 0,
+      "Pts": 1,
+      "code": "ESP"
+    },
+    {
+      "Selecao": "Cabo Verde",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 0,
+      "GS": 0,
+      "Pts": 1,
+      "code": "CPV"
+    }
+  ],
+  "I": [
+    {
+      "Selecao": "Noruega",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 4,
+      "GS": 1,
+      "Pts": 3,
+      "code": "NOR"
+    },
+    {
+      "Selecao": "Franca",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 3,
+      "GS": 1,
+      "Pts": 3,
+      "code": "FRA"
+    },
+    {
+      "Selecao": "Senegal",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 1,
+      "GS": 3,
+      "Pts": 0,
+      "code": "SEN"
+    },
+    {
+      "Selecao": "Iraque",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 1,
+      "GS": 4,
+      "Pts": 0,
+      "code": "IRQ"
+    }
+  ],
+  "J": [
+    {
+      "Selecao": "Argentina",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 3,
+      "GS": 0,
+      "Pts": 3,
+      "code": "ARG"
+    },
+    {
+      "Selecao": "Austria",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 3,
+      "GS": 1,
+      "Pts": 3,
+      "code": "AUT"
+    },
+    {
+      "Selecao": "Jordania",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 1,
+      "GS": 3,
+      "Pts": 0,
+      "code": "JOR"
+    },
+    {
+      "Selecao": "Algeria",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 0,
+      "GS": 3,
+      "Pts": 0,
+      "code": "ALG"
+    }
+  ],
+  "K": [
+    {
+      "Selecao": "Colombia",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 3,
+      "GS": 1,
+      "Pts": 3,
+      "code": "COL"
+    },
+    {
+      "Selecao": "Congo RD",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 1,
+      "GS": 1,
+      "Pts": 1,
+      "code": "COD"
+    },
+    {
+      "Selecao": "Portugal",
+      "J": 1,
+      "V": 0,
+      "E": 1,
+      "D": 0,
+      "GM": 1,
+      "GS": 1,
+      "Pts": 1,
+      "code": "POR"
+    },
+    {
+      "Selecao": "Uzbequistao",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 1,
+      "GS": 3,
+      "Pts": 0,
+      "code": "UZB"
+    }
+  ],
+  "L": [
+    {
+      "Selecao": "Inglaterra",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 4,
+      "GS": 2,
+      "Pts": 3,
+      "code": "ENG"
+    },
+    {
+      "Selecao": "Gana",
+      "J": 1,
+      "V": 1,
+      "E": 0,
+      "D": 0,
+      "GM": 1,
+      "GS": 0,
+      "Pts": 3,
+      "code": "GHA"
+    },
+    {
+      "Selecao": "Panama",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 0,
+      "GS": 1,
+      "Pts": 0,
+      "code": "PAN"
+    },
+    {
+      "Selecao": "Croacia",
+      "J": 1,
+      "V": 0,
+      "E": 0,
+      "D": 1,
+      "GM": 2,
+      "GS": 4,
+      "Pts": 0,
+      "code": "CRO"
+    }
+  ]
+}
