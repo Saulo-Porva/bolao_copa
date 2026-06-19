@@ -95,6 +95,10 @@ def make_gcs_client_from_streamlit(secrets: dict) -> storage.Client:
     """Creates GCS client from Streamlit Secrets (Streamlit Cloud deployment)."""
     from google.oauth2 import service_account
 
+    # Streamlit Cloud keeps \n as literal \\n in TOML strings — fix before PEM parse.
+    if "private_key" in secrets:
+        secrets = {**secrets, "private_key": secrets["private_key"].replace("\\n", "\n")}
+
     credentials = service_account.Credentials.from_service_account_info(
         secrets,
         scopes=["https://www.googleapis.com/auth/cloud-platform"],
