@@ -79,8 +79,8 @@ class MatchAnalyzer:
         team_b_code: str,
         team_a_name: str,
         team_b_name: str,
-        form_a: TeamForm,
-        form_b: TeamForm,
+        form_a: TeamForm | None,
+        form_b: TeamForm | None,
         squad_a: TeamSquad | None,
         squad_b: TeamSquad | None,
         sentiment_a: SentimentHistory | None,
@@ -136,8 +136,8 @@ class MatchAnalyzer:
                 "outcome_summary", {"team_a_wins": 0.4, "draw": 0.25, "team_b_wins": 0.35}
             ),
             signals_used={
-                "form_a": form_a.record,
-                "form_b": form_b.record,
+                "form_a": form_a.record if form_a else "N/A",
+                "form_b": form_b.record if form_b else "N/A",
                 "h2h_matches": len(h2h.matches) if h2h else 0,
                 "sentiment_a": (
                     sentiment_a.latest().overall_score
@@ -200,10 +200,12 @@ class MatchAnalyzer:
             team_a_name=team_a_name, team_b_name=team_b_name, phase=phase,
             h2h_total=h2h_total, h2h_table=h2h_table, common_scorelines=common_scorelines,
             h2h_a_wins=h2h_a_wins, h2h_draws=h2h_draws, h2h_b_wins=h2h_b_wins,
-            form_a_record=form_a.record, form_a_scored=form_a.avg_goals_scored,
-            form_a_conceded=form_a.avg_goals_conceded,
-            form_b_record=form_b.record, form_b_scored=form_b.avg_goals_scored,
-            form_b_conceded=form_b.avg_goals_conceded,
+            form_a_record=form_a.record if form_a else "N/A (sem dados)",
+            form_a_scored=form_a.avg_goals_scored if form_a else 0.0,
+            form_a_conceded=form_a.avg_goals_conceded if form_a else 0.0,
+            form_b_record=form_b.record if form_b else "N/A (sem dados)",
+            form_b_scored=form_b.avg_goals_scored if form_b else 0.0,
+            form_b_conceded=form_b.avg_goals_conceded if form_b else 0.0,
             alerts_a=alerts_a, alerts_b=alerts_b,
             sentiment_a=sa_score, trend_a=sa_trend, signals_a=sa_signals,
             sentiment_b=sb_score, trend_b=sb_trend, signals_b=sb_signals,

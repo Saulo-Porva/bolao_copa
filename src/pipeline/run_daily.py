@@ -96,13 +96,23 @@ def run(team_filter: list[str] | None = None) -> dict:
         logger.info("Processing %s...", code)
         team_errors: list[str] = []
 
+        af_id = team.get("api_football_id") or 0
+        fd_id = team.get("football_data_id") or 0
+
+        # Copa 2026 form: prefer API-Football (has WC2026 data), fall back to football-data
         try:
-            fd_collector.collect_team_form(code, team.get("football_data_id", 0))
+            if af_id:
+                form = af_collector.collect_copa2026_form(code, af_id)
+                if not form or not form.matches:
+                    fd_collector.collect_team_form(code, fd_id)
+            else:
+                fd_collector.collect_team_form(code, fd_id)
         except Exception as exc:
             team_errors.append(f"form: {exc}")
 
         try:
-            af_collector.collect_squad(code, team.get("api_football_id", 0))
+            if af_id:
+                af_collector.collect_squad(code, af_id)
         except Exception as exc:
             team_errors.append(f"squad: {exc}")
 
@@ -120,6 +130,13 @@ def run(team_filter: list[str] | None = None) -> dict:
 
         completed.add(code)
         save_progress(completed)
+
+    # Collect Copa 2026 odds once per run (not per team)
+    try:
+        snaps = odds_collector.collect_all_copa2026()
+        logger.info("Odds collected: %d matches", len(snaps))
+    except Exception as exc:
+        logger.error("Odds collection failed: %s", exc)
 
     fd_collector.close()
     af_collector.close()

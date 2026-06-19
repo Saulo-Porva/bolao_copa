@@ -5,6 +5,8 @@ from datetime import date
 
 import streamlit as st
 
+from src.collectors.odds import OddsCollector
+from src.config import Settings
 from src.schemas.match import OddsSnapshot
 from src.storage.gcs import GCSStorage
 
@@ -18,10 +20,27 @@ def render(storage: GCSStorage) -> None:
     today = date.today().isoformat()
     blobs = storage.list_blobs(f"odds/{today}/")
 
+    col_refresh, _ = st.columns([1, 3])
+    with col_refresh:
+        if st.button("🔄 Buscar Odds Agora", use_container_width=True):
+            with st.spinner("Consultando The Odds API..."):
+                try:
+                    settings = Settings()
+                    collector = OddsCollector(settings, storage)
+                    snaps = collector.collect_all_copa2026()
+                    collector.close()
+                    if snaps:
+                        st.success(f"{len(snaps)} partidas com odds coletadas.")
+                        blobs = storage.list_blobs(f"odds/{today}/")
+                    else:
+                        st.warning("Nenhuma odd disponível no momento (API sem dados ativos).")
+                except Exception as exc:
+                    st.error(f"Erro ao buscar odds: {exc}")
+
     if not blobs:
         st.info(
             f"Nenhuma odds coletada para {today}. "
-            "Execute o pipeline ou aguarde a coleta diária."
+            "Clique em 'Buscar Odds Agora' ou aguarde o pipeline diário."
         )
         return
 

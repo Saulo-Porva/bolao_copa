@@ -1,4 +1,4 @@
-"""API-Football v3 collector: squad, injuries, player stats."""
+"""API-Football v3 collector: squad, injuries, Copa 2026 form, player stats."""
 from __future__ import annotations
 
 import json
@@ -9,13 +9,16 @@ from pathlib import Path
 import httpx
 
 from src.config import Settings
-from src.schemas.team import Player, TeamSquad, TeamStats, TopScorer
+from src.schemas.team import MatchResult, Player, TeamForm, TeamSquad, TeamStats, TopScorer
 from src.storage.gcs import GCSStorage
 
 logger = logging.getLogger(__name__)
 
 _BASE_URL = "https://v3.football.api-sports.io"
 _DAILY_COUNTER_FILE = Path("data/.api_football_calls.json")
+
+_WC2026_LEAGUE = 1
+_WC2026_SEASON = 2026
 
 
 class ApiFootballCollector:
@@ -62,6 +65,34 @@ class ApiFootballCollector:
             logger.error("API-Football network error %s: %s", path, exc)
             return None
 
+    def collect_copa2026_form(self, team_code: str, team_id: int) -> TeamForm | None:
+        gcs_path = f"teams/{team_code}/form.json"
+        cached = self._storage.download_json(gcs_path)
+        if cached:
+            try:
+                form = TeamForm.model_validate(cached)
+                if form.matches:
+                    age_hours = (datetime.utcnow() - form.updated_at).total_seconds() / 3600
+                    if age_hours < self._settings.form_cache_hours:
+                        logger.debug("Cache hit Copa form %s", team_code)
+                        return form
+            except Exception:
+                pass
+
+        data = self._get(
+            "/fixtures",
+            {"league": _WC2026_LEAGUE, "season": _WC2026_SEASON, "team": team_id, "status": "FT"},
+        )
+        if not data or not data.get("response"):
+            logger.warning("No Copa 2026 fixtures from API-Football for %s (id=%s)", team_code, team_id)
+            return TeamForm.model_validate(cached) if cached else None
+
+        matches = [self._parse_fixture(f, team_id) for f in data["response"]]
+        form = TeamForm(code=team_code, matches=matches, updated_at=datetime.utcnow())
+        self._storage.upload_json(gcs_path, form.model_dump(mode="json"))
+        logger.info("Copa 2026 form %s: %d matches", team_code, len(matches))
+        return form
+
     def collect_squad(self, team_code: str, team_id: int, season: int = 2025) -> TeamSquad | None:
         gcs_path = f"teams/{team_code}/squad.json"
         cached = self._storage.download_json(gcs_path)
@@ -84,10 +115,7 @@ class ApiFootballCollector:
 
         injuries_data = self._get("/injuries", {"team": team_id, "season": season})
         if injuries_data and injuries_data.get("response"):
-            injured_names = {
-                inj["player"]["name"]
-                for inj in injuries_data["response"]
-            }
+            injured_names = {inj["player"]["name"] for inj in injuries_data["response"]}
             for p in players:
                 if p.name in injured_names:
                     p.status = "injured"
@@ -113,8 +141,7 @@ class ApiFootballCollector:
             return TeamStats.model_validate(cached) if cached else None
 
         team_scorers = [
-            p for p in data.get("response", [])
-            if p["statistics"][0]["team"]["id"] == team_id
+            p for p in data.get("response", []) if p["statistics"][0]["team"]["id"] == team_id
         ]
         top_scorers = [
             TopScorer(
@@ -135,6 +162,36 @@ class ApiFootballCollector:
         )
         self._storage.upload_json(gcs_path, stats.model_dump(mode="json"))
         return stats
+
+    def _parse_fixture(self, fixture: dict, team_id: int) -> MatchResult:
+        home = fixture["teams"]["home"]
+        away = fixture["teams"]["away"]
+        goals = fixture["goals"]
+        fix = fixture["fixture"]
+
+        is_home = home["id"] == team_id
+        gs = (goals["home"] if is_home else goals["away"]) or 0
+        gc = (goals["away"] if is_home else goals["home"]) or 0
+
+        if gs > gc:
+            result = "W"
+        elif gs < gc:
+            result = "L"
+        else:
+            result = "D"
+
+        opp_name = away["name"] if is_home else home["name"]
+        opp_code = opp_name[:3].upper()
+
+        return MatchResult(
+            date=fix["date"][:10],
+            opponent_code=opp_code,
+            home_or_away="home" if is_home else "away",
+            goals_scored=gs,
+            goals_conceded=gc,
+            competition="FIFA World Cup 2026",
+            result=result,
+        )
 
     def _parse_player(self, raw: dict) -> Player:
         pos_map = {"Goalkeeper": "GK", "Defender": "DF", "Midfielder": "MF", "Attacker": "FW"}
