@@ -45,5 +45,8 @@
   {"code": "PAR", "name": "Paraguay",       "name_pt": "Paraguai",        "confederation": "CONMEBOL", "fifa_ranking": 65, "group": "P", "api_football_id": 1044, "football_data_id": null},
   {"code": "VEN", "name": "Venezuela",      "name_pt": "Venezuela",       "confederation": "CONMEBOL", "fifa_ranking": 57, "group": "G", "api_football_id": 1044, "football_data_id": null},
   {"code": "BOL", "name": "Bolivia",        "name_pt": "Bolívia",         "confederation": "CONMEBOL", "fifa_ranking": 85, "group": "A", "api_football_id": 1044, "football_data_id": null},
-  {"code": "NZL", "name": "New Zealand",    "name_pt": "Nova Zelândia",   "confederation": "OFC",      "fifa_ranking": 95, "group": "M", "api_football_id": 1044, "football_data_id": null}
+  {"code": "NZL", "name": "New Zealand",    "name_pt": "Nova Zelândia",   "confederation": "OFC",      "fifa_ranking": 95, "group": "M", "api_football_id": 1044, "football_data_id": null},
+  {"code": "HTI", "name": "Haiti",          "name_pt": "Haiti",           "confederation": "CONCACAF", "fifa_ranking": 83, "group": "B", "api_football_id": 1044, "football_data_id": null},
+  {"code": "CIV", "name": "Ivory Coast",    "name_pt": "Costa do Marfim", "confederation": "CAF",      "fifa_ranking": 50, "group": "C", "api_football_id": 1044, "football_data_id": null},
+  {"code": "SWE", "name": "Sweden",         "name_pt": "Suécia",          "confederation": "UEFA",     "fifa_ranking": 24, "group": null, "api_football_id": 1044, "football_data_id": null}
 ]
