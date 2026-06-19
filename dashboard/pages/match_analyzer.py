@@ -26,11 +26,11 @@ def _load_teams(storage: GCSStorage) -> dict[str, dict]:
     return {t["code"]: t for t in raw}
 
 
-def _load_fixtures() -> list[dict]:
+def _load_fixtures(storage: GCSStorage) -> list[dict]:
     path = Path("data/copa2026_fixtures.json")
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))
-    return []
+    return storage.download_json("_meta/copa2026_fixtures.json") or []
 
 
 def _load_form(storage: GCSStorage, code: str) -> TeamForm | None:
@@ -73,7 +73,7 @@ def render(storage: GCSStorage, settings: Settings) -> None:
         st.error("Nenhuma seleção encontrada. Execute o pipeline primeiro.")
         return
 
-    fixtures = _load_fixtures()
+    fixtures = _load_fixtures(storage)
 
     mode = st.radio(
         "Modo de seleção",
