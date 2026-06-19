@@ -1,0 +1,163 @@
+pipeline:
+  teams_count: 48
+  form_matches_limit: 10
+  h2h_matches_limit: 20
+  news_articles_per_team: 15
+  max_active_uploads: 3
+
+sentiment:
+  min_articles_for_analysis: 3
+  xlm_max_length: 512
+
+news:
+  reddit_subreddits:
+    BRA: r/futebol
+    ARG: r/Argentina
+    FRA: r/france
+    ENG: r/EnglandFootball
+    GER: r/soccer
+    ESP: r/LaLiga
+    POR: r/portugal
+    NED: r/Netherlands
+    BEL: r/belgium
+    ITA: r/italy
+    URU: r/uruguay
+    COL: r/colombia
+    MEX: r/LigaMX
+    USA: r/ussoccer
+    CAN: r/CanadaSoccer
+    ECU: r/ecuador
+    PAR: r/paraguay
+    PER: r/PeruSoccer
+    CHL: r/chile
+    VEN: r/venezuela
+    BOL: r/bolivia
+    MAR: r/Morocco
+    SEN: r/Senegal
+    NGA: r/Nigeria
+    CMR: r/Cameroon
+    GHA: r/Ghana
+    CIV: r/IvoryCoast
+    EGY: r/Egypt
+    MLI: r/Mali
+    TUN: r/Tunisia
+    RSA: r/southafrica
+    ANG: r/angola
+    JPN: r/JapanSoccer
+    KOR: r/korea
+    AUS: r/Aleague
+    IRN: r/iran
+    SAU: r/SaudiArabia
+    QAT: r/qatar
+    IRQ: r/iraq
+    JOR: r/jordan
+    UZB: r/uzbekistan
+    CHN: r/China
+    THA: r/Thailand
+    NZL: r/newzealand
+    FIJ: r/fiji
+    PNG: r/papuanewguinea
+    SLV: r/ElSalvador
+    PAN: r/Panama
+    HON: r/Honduras
+    CRC: r/CostaRicaSoccer
+
+  news_languages:
+    BRA:
+      hl: pt-BR
+      gl: BR
+    ARG:
+      hl: es-419
+      gl: AR
+    FRA:
+      hl: fr
+      gl: FR
+    ENG:
+      hl: en-GB
+      gl: GB
+    GER:
+      hl: de
+      gl: DE
+    ESP:
+      hl: es
+      gl: ES
+    POR:
+      hl: pt-PT
+      gl: PT
+    NED:
+      hl: nl
+      gl: NL
+    BEL:
+      hl: fr
+      gl: BE
+    ITA:
+      hl: it
+      gl: IT
+    URU:
+      hl: es-419
+      gl: UY
+    COL:
+      hl: es-419
+      gl: CO
+    MEX:
+      hl: es-419
+      gl: MX
+    USA:
+      hl: en-US
+      gl: US
+    CAN:
+      hl: en-CA
+      gl: CA
+    MAR:
+      hl: fr
+      gl: MA
+    SEN:
+      hl: fr
+      gl: SN
+    NGA:
+      hl: en
+      gl: NG
+    CMR:
+      hl: fr
+      gl: CM
+    GHA:
+      hl: en
+      gl: GH
+    EGY:
+      hl: ar
+      gl: EG
+    JPN:
+      hl: ja
+      gl: JP
+    KOR:
+      hl: ko
+      gl: KR
+    AUS:
+      hl: en-AU
+      gl: AU
+    IRN:
+      hl: fa
+      gl: IR
+    SAU:
+      hl: ar
+      gl: SA
+    CHN:
+      hl: zh-CN
+      gl: CN
+    DEFAULT:
+      hl: en
+      gl: US
+
+gcs:
+  paths:
+    form: "teams/{code}/form.json"
+    squad: "teams/{code}/squad.json"
+    stats: "teams/{code}/stats.json"
+    news: "teams/{code}/news.json"
+    sentiment_record: "teams/{code}/sentiment.json"
+    sentiment_history: "teams/{code}/sentiment_history.json"
+    h2h: "h2h/{key}.json"
+    odds: "odds/{key}.json"
+    analysis: "analysis/{key}.json"
+    pipeline_log: "_meta/collection_log.json"
+    last_updated: "_meta/last_updated.json"

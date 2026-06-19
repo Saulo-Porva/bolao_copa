@@ -46,3 +46,9 @@ Thumbs.db
 secrets/
 credentials.json
 service-account.json
+keys/
+*-key.json
+.streamlit/secrets.toml
+.upload_progress.json
+data/.api_football_calls.json
+data/.odds_api_calls.json
