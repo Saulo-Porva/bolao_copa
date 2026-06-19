@@ -24,9 +24,20 @@ def get_gcs_storage() -> GCSStorage:
     settings = _get_settings()
     if "gcp_service_account" in st.secrets:
         client = make_gcs_client_from_streamlit(dict(st.secrets["gcp_service_account"]))
+        bucket = st.secrets.get("gcs", {}).get("bucket", settings.gcs_bucket)
     else:
-        client = make_gcs_client(settings.gcs_project)
-    return GCSStorage(settings.gcs_bucket, client)
+        try:
+            client = make_gcs_client(settings.gcs_project)
+        except Exception:
+            st.error(
+                "Credenciais GCS nao encontradas. "
+                "Adicione `[gcp_service_account]` nas Streamlit Secrets "
+                "(Manage app > Secrets).",
+                icon="🔑",
+            )
+            st.stop()
+        bucket = settings.gcs_bucket
+    return GCSStorage(bucket, client)
 
 
 @st.cache_resource
