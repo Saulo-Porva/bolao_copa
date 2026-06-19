@@ -116,7 +116,7 @@ def run(team_filter: list[str] | None = None) -> dict:
             errors.append({"team": code, "errors": team_errors})
             logger.warning("%s completed with errors: %s", code, team_errors)
         else:
-            logger.info("%s ✓", code)
+            logger.info("%s OK", code)
 
         completed.add(code)
         save_progress(completed)
